@@ -9,13 +9,13 @@
 			
 			(function(e,times){
 				$(e).find('td')
-					.mousemove(function(){
-						$(this).css('opacity',0.9);
+					.mouseover(function(){
+						$(this).css('borderColor',"#333333");
 					})
 					.mouseout(function(){
-						$(this).css('opacity',0.0);
+						$(this).css('borderColor',"#EEEEEE");
 					})
-					.css('opacity',0.0)
+					.css('borderColor',"#EEEEEE")
 				;
 				if( times == 0 )return;
 				var fnc = arguments.callee;
@@ -29,7 +29,7 @@
 		*{margin: 0px;padding:0px;}
 		table{ width:100%; height:100%;}
 		tr{}
-		td{width:33%;height: 33%;border:1px solid #000;}
+		td{width:33%;height: 33%;border:1px solid #EEEEEE;border-spacing: 0px;border-collapse: collapse;}
 	</style>
 </head>
 <body>
