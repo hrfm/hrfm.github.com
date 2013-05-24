@@ -9,13 +9,21 @@
 			
 			(function(e,times){
 				$(e).find('td')
-					.mouseover(function(){
-						$(this).css('borderColor',"#333333");
+					.on('mousemove touchstgart',function(){
+						$(this).css('opacity',.5);
 					})
-					.mouseout(function(){
-						$(this).css('borderColor',"#FFFFFF");
+					.on('mouseout',function(){
+						$(this).animate(
+							{
+								'opacity':0.1
+							},
+							{
+								duration:200,
+								queue:false
+							}
+						)
 					})
-					.css('borderColor',"#FFFFFF")
+					.css('opacity',0.1);
 				;
 				if( times == 0 )return;
 				var fnc = arguments.callee;
@@ -29,7 +37,7 @@
 		*{margin: 0px;padding:0px;}
 		table{ width:100%; height:100%;}
 		tr{}
-		td{width:33%;height: 33%;border:1px solid #F0F0F0;border-spacing: 0px;border-collapse: collapse;}
+		td{width:33%;height: 33%;border:1px solid #333333;border-spacing: 0px;border-collapse: collapse;}
 	</style>
 </head>
 <body>
